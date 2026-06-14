@@ -1,0 +1,6 @@
+{
+  "name": "Pocket ROM Sync",
+  "description": "Syncs ROMs from your local library to your Pocket SD card, with smart version matching and conflict resolution.",
+  "allowed_hosts": [],
+  "logo_url": "https://raw.githubusercontent.com/openfpga-library/pocket-plugin/main/plugin_icon.png"
+}
