@@ -27,9 +27,10 @@ jobs:
       - run: cargo build -p pocket-rom-sync --target wasm32-wasip1 --release
 
       - name: "Add WASM & JSON to release"
-        run: |
-          gh release upload ${{github.event.release.tag_name}} ./target/wasm32-wasip1/release/pocket_rom_sync.wasm#plugin.wasm --clobber
-          gh release upload ${{github.event.release.tag_name}} ./plugin.json --clobber
-        env:
-          GITHUB_TOKEN: ${{ github.TOKEN }}
-        shell: bash
+          run: |
+            cp ./target/wasm32-wasip1/release/pocket_rom_sync.wasm ./target/wasm32-wasip1/release/plugin.wasm
+            gh release upload ${{github.event.release.tag_name}} ./target/wasm32-wasip1/release/plugin.wasm --clobber
+            gh release upload ${{github.event.release.tag_name}} ./plugin.json --clobber
+          env:
+            GITHUB_TOKEN: ${{ github.TOKEN }}
+          shell: bash
