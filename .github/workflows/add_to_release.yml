@@ -28,7 +28,7 @@ jobs:
 
       - name: "Add WASM & JSON to release"
         run: |
-          gh release upload ${{github.event.release.tag_name}} ./target/wasm32-wasip1/release/pocket_rom_sync.wasm --clobber
+          gh release upload ${{github.event.release.tag_name}} ./target/wasm32-wasip1/release/pocket_rom_sync.wasm#plugin.wasm --clobber
           gh release upload ${{github.event.release.tag_name}} ./plugin.json --clobber
         env:
           GITHUB_TOKEN: ${{ github.TOKEN }}
